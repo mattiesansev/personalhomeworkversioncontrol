@@ -1,0 +1,5 @@
+1. I got the correct answers for the first 10 numbers in the sequence
+1 1 1 2 2 3 4 5 7 9 12
+I also tried PAD(1000) and I noticed that it took a very long time to evaluate. This is because the function works with recursion which can end up taking a long time. It took so long that I had to stop the prgoram.
+
+2. 
