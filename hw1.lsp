@@ -51,3 +51,24 @@
 
 ;; ----------------- QUESTION 3 -------------- ;;
 
+(defun ANON(TREE)
+  (print(cdr TREE))
+  (print(car TREE))
+  ;;if current item is an atom
+  (if (atom TREE)
+      ;;we can have one ?
+      '?
+  ;;else let's evaluate cdr and car
+  ;;if there's only one element
+  (if (equal (cdr TREE) NIL)
+      '?
+      ;;else we want to slowly separate
+      (cons '? (cons (ANON(cdr TREE)) '()))
+      ))
+  )
+
+(print (ANON '7))
+(print (ANON '(7)))
+(print (ANON '(7 8)))
+(print (ANON '(((L E) F) T)))
+;;(print (cons 1 '(2)))
