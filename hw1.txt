@@ -5,3 +5,74 @@ I also tried PAD(1000) and I noticed that it took a very long time to evaluate. 
 2. For the first ten values of N, The number of additions is one less than the value of the number in the Padovan sequence. This is because for the first numbers that are 1, the number of additions are zero. After that, it takes 1 addition to reach the next 2 values, and after that, since we need P(N-2) and P(N-3), it takes 1 + (number of additions for N-3 and N-2) additions to get the value. Since the first addition values are equal to PAD values -1, we know that we will end up with 1 + PAD(N-2) + PAD(N-3) - 1 - 1, which will be equal to PAD(N) -1.
 
 
+Inputs and Outputs from the functions:
+(print (PAD 0))
+(print (PAD 1))
+(print (PAD 2))
+(print (PAD 3))
+(print (PAD 4))
+(print (PAD 5))
+(print (PAD 6))
+(print (PAD 7))
+(print (PAD 8))
+(print (PAD 9))
+(print (PAD 10))
+(print (PAD 20))
+
+1 
+1 
+1 
+2 
+2 
+3 
+4 
+5 
+7 
+9 
+12 
+200
+
+
+
+(print (SUMS 0))
+(print (SUMS 1))
+(print (SUMS 2))
+(print (SUMS 3))
+(print (SUMS 4))
+(print (SUMS 5))
+(print (SUMS 6))
+(print (SUMS 7))
+(print (SUMS 8))
+(print (SUMS 9))
+(print (SUMS 10))
+
+0 
+0 
+0 
+1 
+1 
+2 
+3 
+4 
+6 
+8 
+11
+
+
+
+
+(print (ANON '42))
+(print (ANON 'FOO))
+(print (ANON '(((L E) F) T)))
+(print  (ANON '(5 FOO 3.1 -0.2)))
+(print  (ANON '(1 (FOO 3.1) -0.2)))
+(print (ANON '(((1 2) (FOO 3.1)) (BAR -0.2))))
+(print (ANON '(R (I (G (H T))))))
+
+? 
+? 
+(((? ?) ?) ?) 
+(? ? ? ?) 
+(? (? ?) ?) 
+(((? ?) (? ?)) (? ?)) 
+(? (? (? (? ?)))) 

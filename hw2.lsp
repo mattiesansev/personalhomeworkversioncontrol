@@ -1,0 +1,43 @@
+;; ------------------- QUESTION 1 ------------------ ;;
+
+;;BFS Function
+;;returns the top-level list of leaf nodes
+
+(defun BFSS(FRINGE)
+  (cond ((not FRINGE)
+	 '()) ;;prints empty paran
+	;; if it's an atom
+	((atom FRINGE)
+	 '?) ;;print ? for atom
+	(t (cons (BFSS(car FRINGE)) (BFSS(cdr FRINGE)))))
+  )
+
+(defun BFS(FRINGE)
+  (cond ((atom FRINGE) ;;if it is an atom
+	 ;;print it
+	 FRINGE)
+	 ;;if the first value is an atom
+	((atom (car FRINGE))
+	 ;;print it with second part concatenated!
+	 (cons (car FRINGE) (BFS (cdr FRINGE))))
+	;;else if cdr is null and car is not null
+	((not (cdr FRINGE))
+	 ;;run BFS on car!
+	 (BFS (car FRINGE)))
+	;;else if the second value is an atom
+	((atom (cdr FRINGE))
+	 ;;print it with first part concatenated!
+	 (cons (cdr FRINGE) (BFS(car FRINGE))))
+	;;else it is not NIL and we need to split it again
+	(FRINGE
+	 (cons (BFS(car FRINGE)) (BFS (cdr FRINGE))))
+	;;else it must be NIL, do nothing
+	))
+
+(print (BFS '(ROOT)))
+(print (BFS '(A (B C))))
+(print (cdr '((((L E) F) T))))
+(print (cdr (car '((((L E) F) T)))))
+(print (BFS '((((L E) F) T))))
+;;(print( car '((R (I (G (H T)))))))
+(print( BFS '((R (I (G (H T)))))))
